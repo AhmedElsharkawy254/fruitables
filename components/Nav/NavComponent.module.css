@@ -1,0 +1,85 @@
+/* components/NavComponent.module.css */
+
+.N {
+    background-color: white; /* Background color of the navbar */   
+   width: 90% ;
+    margin-left: 70px;
+position: relative;
+}
+.N h1{
+    color: rgb(4, 189, 4);
+    font-weight: bold;
+}
+  
+  .navLink {
+    color: rgb(68, 67, 67); 
+  }
+  
+  .navLink:hover {
+    color: green; /* Text color on hover */
+font-size: 15px;
+font-weight: bold;
+}
+  
+  .navIcon {
+    color: rgb(4, 189, 4);
+    width: 26px;
+    height: 30px; /* Default color of the navbar icons */
+  }
+  
+  .navIcon:hover {
+    color: orange; /* Icon color on hover */
+  }
+  
+  .dropdown-menu {
+    background-color: white; /* Background color of the dropdown menu */
+  }
+  
+  .dropdown-item {
+    color: rgb(4, 189, 4);; /* Text color in dropdown items */
+  }
+  
+  .dropdown-item:hover {
+    color: yellow; /* Text color on hover in dropdown items */
+  }
+  
+  .dropdownIcon {
+    color: rgb(4, 189, 4); /* Color of the dropdown icon */
+  }
+
+
+
+  /* components/NavComponent.module.css */
+/* components/NavComponent.module.css */
+.topbar {
+    background-color: rgb(4, 189, 4); /* Set the background color to green */
+    border-radius: 230px 100px; /* Make the corners rounded */
+    padding: 5px 20px; /* Adjust the padding to make the bar wider */
+    margin: 0 10px;
+    width: 90%;
+    margin-left: 70px; /* Add margins to create space on both sides */
+  }
+  
+  .link {
+    color: white; /* Set text color to white */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .link {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .link :hover {
+    color: rgb(185, 185, 6); /* Change text color to yellow on hover */
+  }
+  
+  .topbar .top-info i,
+  .topbar .top-link i {
+    color: yellow; /* Set icon color to yellow */
+  }
+  
+  .icon {
+    color: rgb(185, 185, 6); /* Change icon color to green on hover */
+  }
+  

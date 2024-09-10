@@ -1,95 +1,54 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import React, { useState } from 'react';
+import NavComponent from '../components/Nav/NavBar';
+import Herosection from '../components/HeroSection/HeroSectionCommponent';
+import FeatureSelection from '../components/FeatureSelection/FeatureSelectionc';
+import FruitshopComponent from '../components/Fruitshop/FruitshopComponent';
+import Offer from '../components/Offers/OfferComponant';
+import BannerComponent from '../components/Banner/BannerComponent';
+import Best from '../components/bestsellerProduct/BestSellerProducts';
+import Beforlast from '../components/Beforlast/Beforelastcomponant';
+import Last from '../components/Lastcomponant/lastcomponent';
+import BackToTopButton from '../components/btnscrolling/btnscrollingcomponent';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [cartCount, setCartCount] = useState<number>(0);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  // Function to increment cart count
+  const addToCart = () => {
+    setCartCount(prevCount => prevCount + 1);
+  };
+
+  // Function to handle search submission
+  const handleSearchSubmit = (term: string) => {
+    setSearchTerm(term);
+  };
+
+  return (
+    <>
+      {/* Pass the search handler to NavComponent */}
+      <NavComponent cartCount={cartCount} onSearch={handleSearchSubmit} />
+      
+      {/* Pass the search handler to Herosection */}
+      <Herosection onSearchSubmit={handleSearchSubmit} />
+      
+      <FeatureSelection />
+      
+      {/* Pass searchTerm to FruitshopComponent */}
+      <FruitshopComponent addToCart={addToCart} cartCount={cartCount} searchTerm={searchTerm} />
+      
+      <Offer />
+      
+      <BannerComponent addToCart={addToCart} cartCount={cartCount} />
+      
+      <Best addToCart={addToCart} cartCount={cartCount} />
+      
+      <Beforlast />
+      
+      <Last />
+      
+      <BackToTopButton />
+    </>
   );
 }

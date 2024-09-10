@@ -1,0 +1,29 @@
+.h1{
+    font-weight: bold;
+    color: #565755;
+}
+.cont{
+    width: 90%;
+    margin-left: 90px;
+    margin-top: -40px;
+}
+
+
+.navIcon{
+    color:#81c408;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.butt{
+    color: #81c408 ;
+    border: 1px solid #81c408 !important;
+   height: 40px;
+   width: 155px;
+   margin-left: -10px;
+   text-align: center;
+   cursor: pointer;
+}
+.butt:hover{
+    background-color :#ffb524;
+    
+}

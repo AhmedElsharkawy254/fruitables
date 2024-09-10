@@ -1,0 +1,38 @@
+.featursitem {
+    transition: transform 0.3s ease-in-out;
+    background-color:#c1c4c7 ;
+  }
+  
+  .featursitem:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .featursicon {
+    background-color: #ffb524 !important; /* Change circle background color */
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .featursicon::after {
+    content: '';
+    position: absolute;
+    bottom: -12px; /* Position the triangle below the circle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ffb524; /* Match the background color */
+  }
+  
+  .iconsize {
+    font-size: 3rem;
+    color: white;
+  }
+  
+  

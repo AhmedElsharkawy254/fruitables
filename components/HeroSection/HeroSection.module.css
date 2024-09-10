@@ -1,0 +1,84 @@
+.heroHeader{
+    width: 100%;
+    height: 500px;
+    margin-top: 140px;
+    background: linear-gradient(rgba(248, 223, 173, 0.9), rgba(248, 223, 173, 0.9)), url('../public/hero-img-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inside{
+    margin-left: 60px;
+    margin-top: 40px;
+}
+.h4{
+    color: #ffb524 !important;
+    font-weight: bold;
+}
+.h1{
+    color:#81c408 !important;
+    font-weight: bold;
+}
+.input{
+    border: 2px solid #ffb524 !important;
+}
+.btn{
+    background-color: #81c408;
+    border: 2px solid #ffb524 !important;
+    
+}
+.btn:hover{
+    background-color:#ffb524;
+    
+
+}
+.seccontainer{
+    /* background-image: url('../public/hero-img-2.jpg') ; */
+    width: 390px;
+    height: 300px;
+    position: relative;
+top: 210px;
+left: 800px;
+border-radius: 20px;
+}
+/* hgjy */
+
+.antherdiv{
+position: relative;
+left: 850px;
+top: -200px;
+
+}
+
+.btnicon{
+
+    background-color:#81c408;
+    border-radius: 50px;
+    color: white;
+    padding: 30px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.imgesdiv{
+    width: 520px;
+    height:317px;
+    background-color: #ffb524;
+    border-radius: 20px 20px;
+}
+
+.labels{
+    font-weight: bold;
+background-color: rgba(255, 181, 36, 0.5);
+position: relative;
+top: -170px;
+left: 250px;
+width: 150px;
+height: 50px;
+cursor: pointer;
+}

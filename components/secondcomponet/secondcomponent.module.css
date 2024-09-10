@@ -1,0 +1,22 @@
+.labels{
+    background-color: #ffb524;
+}
+.btn{
+    border: 1px solid #ffb524;
+    color: #81c408;
+    padding: 2px;
+}
+.logo{
+    padding-right: 5px;
+}
+.container{
+    border:1px solid #ffb524 ;
+}
+.categoryColor{
+    color: #81c408;
+
+}
+.categoryColor a{
+    color:#81c408;
+    text-decoration: none;
+}

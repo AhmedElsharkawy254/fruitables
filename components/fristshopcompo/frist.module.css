@@ -1,0 +1,11 @@
+.bgimg{
+    background-image: url('../public/raspb.jpg');
+    background-size: cover;
+    margin-top: 140px;
+    
+}
+.bgimg a{
+    color: #81c408;
+    text-decoration: none;
+    font-weight: bold;
+}
