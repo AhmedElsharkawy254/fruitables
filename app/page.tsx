@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       {/* Pass the search handler to NavComponent */}
-      <NavComponent cartCount={cartCount} onSearch={handleSearchSubmit} />
+      <NavComponent cartCount={cartCount}  />
       
       {/* Pass the search handler to Herosection */}
       <Herosection onSearchSubmit={handleSearchSubmit} />

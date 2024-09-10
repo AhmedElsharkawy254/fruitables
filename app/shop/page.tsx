@@ -15,7 +15,7 @@ const Shop = () => {
   
   return (
       <>
-    <NavComponent cartCount={cartCount}/>
+        <NavComponent cartCount={cartCount}/>
           <FristShopcomponent /> 
       <Secendcomponet onAddToCart={handleAddToCart}/>  
       <BackToTopButton />  

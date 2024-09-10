@@ -5,10 +5,11 @@ import Garps from '../public/Garps.jpg';
 import panana from '../public/panana.jpg';
 import raspb from '../public/raspb.jpg';
 import orange from '../public/orange.jpg';
-import parsel2 from '../public/parsel2.jpg';
+import { StaticImageData } from 'next/image'; // Import StaticImageData from Next.js
+
 import apri from '../public/apri.jpg';
 import styles from '../bestsellerProduct/Bestseller.module.css'
-import { FaMapMarkerAlt, FaEnvelope, FaBars, FaSearch, FaShoppingBag, FaUser } from 'react-icons/fa';
+import {  FaShoppingBag,  } from 'react-icons/fa';
 import NavComponent from '../Nav/NavBar'; 
 
 // Define a product interface
@@ -16,7 +17,7 @@ interface Product {
   id: number;
   name: string;
   price: string;
-  imgSrc: string;
+  imgSrc: StaticImageData;
   rating: number;
 }
 

@@ -12,13 +12,14 @@ import pride from '../public/bride.jpg';
 import NavComponent from '../Nav/NavBar'; 
 import styles from './FruitshopComponent.module.css';
 import { FaShoppingBag } from 'react-icons/fa';
+import { StaticImageData } from 'next/image'; // Import StaticImageData from Next.js
 
 interface Product {
   id: number;
   name: string;
   category: string;
   price: string;
-  imgSrc: any;
+  imgSrc: StaticImageData;
 }
 
 interface FruitshopProps {
@@ -50,7 +51,7 @@ const FruitshopComponent: React.FC<FruitshopProps> = ({ addToCart, cartCount, se
 
   return (
     <>
-      <NavComponent cartCount={cartCount} onSearch={() => {}} /> {/* Pass onSearch function if needed */}
+      <NavComponent cartCount={cartCount}  /> {/* Pass onSearch function if needed */}
       <div className="container-fluid py-5" style={{ maxWidth: '1200px' }}>
         <div className="container py-5">
           <div className="row g-4">

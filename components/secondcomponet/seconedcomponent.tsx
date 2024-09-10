@@ -1,7 +1,7 @@
 // ShopComponent.tsx
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import featuredImg1 from '../public/Garps.jpg';
 import featuredImg2 from '../public/Garps.jpg';
 import featuredImg3 from '../public/orange.jpg';
@@ -12,7 +12,16 @@ import fruitItem3 from '../public/raspb.jpg';
 import { FaAppleAlt, FaStar, FaSearch, FaShoppingBag } from 'react-icons/fa';
 import styles from '@/components/secondcomponet/secondcomponent.module.css';
 
-const products = [
+// Defining the Product type more specifically
+interface Product {
+  src: StaticImageData;
+  name: string;
+  price: number;
+  rating: number;
+  category: string;
+}
+
+const products: Product[] = [
   { src: featuredImg1, name: 'Big Banana', price: 2.99, rating: 4, category: 'Banana' },
   { src: featuredImg2, name: 'Sweet Apple', price: 3.49, rating: 5, category: 'Apples' },
   { src: featuredImg3, name: 'Fresh Orange', price: 4.99, rating: 3, category: 'Oranges' },
@@ -21,8 +30,14 @@ const products = [
   { src: fruitItem3, name: 'Raspberry', price: 7.99, rating: 5, category: 'Raspberry' }
 ];
 
-const getCategoryCounts = (products: any[]) => {
-  return products.reduce((acc: any, product) => {
+// Defining category counts type
+interface CategoryCounts {
+  [category: string]: number;
+}
+
+// Getting the counts of each category
+const getCategoryCounts = (products: Product[]): CategoryCounts => {
+  return products.reduce((acc: CategoryCounts, product: Product) => {
     acc[product.category] = (acc[product.category] || 0) + 1;
     return acc;
   }, {});
@@ -49,13 +64,13 @@ const ShopComponent: React.FC<{ onAddToCart: () => void }> = ({ onAddToCart }) =
     .filter(product => product.name.toLowerCase().includes(searchQuery))
     .filter(product => product.price <= priceRange || priceRange === 0);
 
-  const sortProducts = (products: any[], option: string) => {
+  const sortProducts = (products: Product[], option: string) => {
     switch (option) {
       case 'Popularity':
         return [...products].sort((a, b) => b.rating - a.rating);
       case 'Organic':
       case 'Fantastic':
-        return products; // Placeholder
+        return products; // Placeholder for future sorting logic
       default:
         return products; // No sorting
     }

@@ -4,24 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaMapMarkerAlt, FaEnvelope, FaBars, FaSearch, FaShoppingBag, FaUser } from 'react-icons/fa';
 import styles from './NavComponent.module.css';
 import Link from 'next/link'; // Import Link for navigation
-import dynamic from 'next/dynamic';
 
 interface NavProps {
   cartCount: number;
-  onSearch: (searchTerm: string) => void;
 }
 
-const NavComponent: React.FC<NavProps> = ({ cartCount, onSearch }) => {
-  const [searchTerm, setSearchTerm] = React.useState('');
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleSearchSubmit = () => {
-    onSearch(searchTerm);
-  };
-
+const NavComponent: React.FC<NavProps> = ({ cartCount}) => {
   return (
     <>
       <div className="container-fluid fixed-top" style={{ top: '0px' }}>
@@ -110,13 +98,11 @@ const NavComponent: React.FC<NavProps> = ({ cartCount, onSearch }) => {
                   className="form-control p-3" 
                   placeholder="Keywords" 
                   aria-describedby="search-icon-1" 
-                  onChange={handleSearchChange}
                 />
                 <span 
                   id="search-icon-1" 
                   className="input-group-text p-3" 
                   style={{ cursor: 'pointer' }} 
-                  onClick={handleSearchSubmit}
                 >
                   <FaSearch />
                 </span>
